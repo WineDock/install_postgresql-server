@@ -1,0 +1,8 @@
+---
+- include_vars: "{{ ansible_distribution }}/{{ ansible_distribution_major_version }}.yml"
+- include_vars: "{{ ansible_distribution }}/main.yml"
+- include: "{{ ansible_distribution }}.yml"
+
+# use http://apt.postgresql.org/pub/repos/
+# and give the choice of version to any distri
+

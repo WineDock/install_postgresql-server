@@ -1,0 +1,9 @@
+---
+# include major version dependant pkg names
+#- include_vars: "{{ ansible_distribution_major_version }}.yml"
+
+#  - redhat-lsb-core
+
+packages:
+  - postgresql{{ pgversionmajor }}{{ pgversionminor }}-server 
+  - postgresql{{ pgversionmajor }}{{ pgversionminor }}-contrib

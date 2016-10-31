@@ -1,0 +1,14 @@
+---
+- name: add postgress repo key to apt
+  apt_key: url="https://www.postgresql.org/media/keys/ACCC4CF8.asc" state=present
+
+- name: add postgres repo to apt
+  apt_repository: repo='deb http://apt.postgresql.org/pub/repos/apt/ {{ releasename }}-pgdg main' state=present
+
+- name: update apt
+  apt: 
+    update_cache: yes
+
+- name: Install the packages 
+  apt: name={{ item }} state=present update_cache=yes
+  with_items: "{{ packages }}"

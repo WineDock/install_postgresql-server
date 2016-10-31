@@ -1,0 +1,31 @@
+[pgdg{{ pgversionmajor }}{{ pgversionminor }}]
+name=PostgreSQL {{ pgversionmajor }}.{{ pgversionminor }} $releasever - $basearch
+baseurl=https://download.postgresql.org/pub/repos/yum/{{ pgversionmajor }}.{{ pgversionminor }}/redhat/rhel-$releasever-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ pgversionmajor }}{{ pgversionminor }}
+
+[pgdg{{ pgversionmajor }}{{ pgversionminor }}-source]
+name=PostgreSQL {{ pgversionmajor }}.{{ pgversionminor }} $releasever - $basearch - Source
+failovermethod=priority
+baseurl=https://download.postgresql.org/pub/repos/yum/srpms/{{ pgversionmajor }}.{{ pgversionminor }}/redhat/rhel-$releasever-$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ pgversionmajor }}{{ pgversionminor }}
+
+[pgdg{{ pgversionmajor }}{{ pgversionminor }}-updates-testing]
+name=PostgreSQL {{ pgversionmajor }}.{{ pgversionminor }} $releasever - $basearch - Updates Testing
+baseurl=https://download.postgresql.org/pub/repos/yum/testing/{{ pgversionmajor }}.{{ pgversionminor }}/redhat/rhel-$releasever-$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ pgversionmajor }}{{ pgversionminor }}
+
+[pgdg{{ pgversionmajor }}{{ pgversionminor }}-source-updates-testing]
+name=PostgreSQL {{ pgversionmajor }}.{{ pgversionminor }} $releasever - $basearch - Source Testing
+failovermethod=priority
+baseurl=https://download.postgresql.org/pub/repos/yum/srpms/testing/{{ pgversionmajor }}.{{ pgversionminor }}/redhat/rhel-$releasever-$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ pgversionmajor }}{{ pgversionminor }}
+
+

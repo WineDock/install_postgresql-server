@@ -1,0 +1,22 @@
+---
+
+- name: download repo key
+  get_url: 
+    url="http://apt.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-{{ pgversionmajor }}{{ pgversionminor }}"
+    dest="/etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ pgversionmajor }}{{ pgversionminor }}"
+    owner=root 
+    group=root 
+    mode="u=rw,g=r,o=r"    
+
+- name: add PostgreSQL repo to yum
+  template:
+    src="yum.repo.j2" 
+    dest="/etc/yum.repos.d/pgdg-temp-{{ pgversionmajor }}{{ pgversionminor }}.repo" 
+    owner=root 
+    group=root 
+    mode="u=rw,g=r,o=r"
+
+- name: Install the packages 
+  yum: name={{ item }} state="present"
+  with_items: "{{ packages }}"
+
