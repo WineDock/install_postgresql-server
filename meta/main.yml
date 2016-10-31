@@ -6,20 +6,20 @@ galaxy_info:
   license: MIT/BSD
   min_ansible_version: 1.9
   platforms:
-  - name: CentOS
+  - name: EL
     versions:
     - 6
     - 7
   - name: Debian
     versions:
-    - 6
-    - 7
-    - 8
+    - squeeze
+    - wheezy
+    - jessie
   - name: Ubuntu
     versions:
-    - 12.04
-    - 14.04
-    - 16.04 
+    - precise
+    - trusty
+    - xenial
   galaxy_tags:
     - PostgreSQL
     - installer
